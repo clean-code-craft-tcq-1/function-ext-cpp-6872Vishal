@@ -12,7 +12,7 @@ using namespace std;
 enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate};
 const char* BMS_Parameters_Name[] = { "Temperature" ,"SOC" , "ChargeRate" };
 
-const char* BMS_Lang_Names[2][]={ {"Temperature" ,"SOC" , "ChargeRate"},{"Temperatur" , "Ladezustand" , "Ladestrom"} };
+const char* BMS_Lang_Names[][]={ {"Temperature" ,"SOC" , "ChargeRate"},{"Temperatur" , "Ladezustand" , "Ladestrom"} };
 // enum BMS_Parameters_Min_Value {Temperature_Min = 0,  SOC_Min = 20, ChargeRate_Min = 0.0};
 // enum BMS_Parameters_Max_Value {Temperature_Max = 45, SOC_Max = 80, ChargeRate_Max = 0.8};
 
