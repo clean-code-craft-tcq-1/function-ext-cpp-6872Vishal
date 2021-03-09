@@ -24,22 +24,44 @@ class BMS{
   public:
     BMS()
     { BMS_OK = true; }
+  
+    float Return_5Percentage_of_Value(float value_tmp)
+    {
+      return ((value_tmp * 5)/100);
+    }
+    void Verify_Parameter_Tolerance(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
+    {
+      if(parameter < min+Return_5Percentage_of_Value(min))
+      {
+        cout <<"Low "<<BMS_Lang_Names[Language][name]<<" Warning! \n";
+      
+      }
+      else if(parameter > max-Return_5Percentage_of_Value(max))
+      {
+        cout <<"High "<<BMS_Lang_Names[Language][name]<<" Warning! \n";
+    
+      }
+      else
+      {
+        cout<<" "<<BMS_Lang_Names[Language][name]<<" is Normal";
+      }
+    }
     /* Verifies the given Parameter is within limits or not */
     void Verify_Parameter(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
     {
       if(parameter < min)
       {
-        cout <<BMS_Lang_Names[Language][name]<<" is below the Minimum Thershold! \n";
+        cout <<"Low "<<BMS_Lang_Names[Language][name]<<" Breach! \n";
         BMS_OK = false;
       }
       else if(parameter > max)
       {
-        cout <<BMS_Lang_Names[Language][name]<<" is above the Maximum Thershold! \n";
+        cout <<"High "<<BMS_Lang_Names[Language][name]<<" Breach! \n";
         BMS_OK = false;
       }
       else
       {
-        //do nothing 
+        Verify_Parameter_Tolerance(parameter,max,min,name,Language);
       }
     }
   bool Send_BMS_Result()
@@ -60,4 +82,5 @@ bool batteryIsOk(float temperature, float soc, float chargeRate) {
 int main() {
   assert(batteryIsOk(25, 70, 0.7) == true);
   assert(batteryIsOk(50, 85, 0) == false);
+  assert(batteryIsOk(41, 77, 0.7) == true);
 }
