@@ -5,9 +5,11 @@ using namespace std;
 /* BMS : Battery Management System */
 enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate};
 enum BMS_Lang {English,German};
-const char* BMS_Parameters_Name[] = { "Temperature" ,"SOC" , "ChargeRate" };
+//const char* BMS_Parameters_Name[] = { "Temperature" ,"SOC" , "ChargeRate" };
 
-const char* BMS_Lang_Names[][3]={ {"Temperature" ,"SOC" , "ChargeRate"},{"Temperatur" , "Ladezustand" , "Ladestrom"} };
+const char* BMS_Parameters_Names[][3]={ {"Temperature" ,"SOC" , "ChargeRate"},
+                                       {"Temperatur" , "Ladezustand" , "Ladestrom"} 
+                                      };
 
 struct BMS_Parameters_MAX_and_MIN_Values
 {
@@ -33,29 +35,29 @@ class BMS{
     {
       return ((value_tmp * 5)/100);
     }
-    void Verify_Parameter_Tolerance(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
+    void Verify_Parameter_Tolerance(float parameter,float max,float min,const char* Parameter_Name)
     {
       if(parameter < min+Return_5Percentage_of_Value(min))
       {
-        cout <<"Low "<<BMS_Lang_Names[Language][name]<<" Warning! \n";
+        cout <<"Low "<<Parameter_Name<<" Warning! \n";
       
       }
       else if(parameter > max-Return_5Percentage_of_Value(max))
       {
-        cout <<"High "<<BMS_Lang_Names[Language][name]<<" Warning! \n";
+        cout <<"High "<<Parameter_Name<<" Warning! \n";
     
       }
       else
       {
-        cout<<BMS_Lang_Names[Language][name]<<" is Normal \n";
+        cout<<Parameter_Name<<" is Normal \n";
       }
     }
     /* Verifies the given Parameter is within limits or not */
-    void Verify_Parameter(float parameter,BMS_Parameters name,BMS_Lang Language)
+    void Verify_Parameter(float parameter,BMS_Parameters name_en,BMS_Lang Language_en)
     {
       float min = BMS_Parameter_MaxMin_st[name].Minimum_Value;
       float max = BMS_Parameter_MaxMin_st[name].Maximum_Value;
-      const char* Parameter_Name = BMS_Lang_Names[Language][name];
+      const char* Parameter_Name = BMS_Parameters_Names[Language_en][name_en];
       if(parameter < min)
       {
         cout <<"Low "<<Parameter_Name<<" Breach! \n";
@@ -63,12 +65,12 @@ class BMS{
       }
       else if(parameter > max)
       {
-        cout <<"High "<<BMS_Lang_Names[Language][name]<<" Breach! \n";
+        cout <<"High "<<Parameter_Name<<" Breach! \n";
         BMS_OK = false;
       }
       else
       {
-        Verify_Parameter_Tolerance(parameter,max,min,name,Language);
+        Verify_Parameter_Tolerance(parameter,max,min,Parameter_Name);
       }
     }
   bool Send_BMS_Result()
