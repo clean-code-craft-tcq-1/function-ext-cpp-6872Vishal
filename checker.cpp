@@ -23,7 +23,11 @@ struct BMS_Parameters_MAX_and_MIN_Values
   float Maximum_Value;
 };
 
-struct BMS_Parameters_MAX_and_MIN_Values BMS_Parameter_MaxMin_st[3]={ {Temperature; 0 ; 45}, {Sate_of_Charge; 20 ; 80}, {Charge_Rate; 0.0 ; 0.8} };
+struct BMS_Parameters_MAX_and_MIN_Values BMS_Parameter_MaxMin_st[3]={ {Temperature, (float)0 , (float)45}; 
+                                                                      {Sate_of_Charge, (float)20 , (float)80}; 
+                                                                      {Charge_Rate, (float)0.0 , (float)0.8} 
+                                                                    };
+
 class BMS{
   private:
   // Variable to verify BMS OK or Not_OK //
