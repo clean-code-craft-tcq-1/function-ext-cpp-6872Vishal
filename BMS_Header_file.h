@@ -34,7 +34,7 @@ class BMS{
     /* Verifies the given Parameter is within Tolerance of 5% */
     void Verify_Parameter_Tolerance(float parameter,float max,float min,const char* Parameter_Name);
     /* Verifies the given Parameter is within limits or not */
-    void Verify_Parameter(float parameter,BMS_Parameters name_en,BMS_Lang Language_en);
+    void Verify_Parameter(float parameter,BMS_Parameters name_en);
   
     bool Send_BMS_Result()
     {
