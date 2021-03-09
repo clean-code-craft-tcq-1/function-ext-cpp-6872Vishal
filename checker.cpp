@@ -55,8 +55,8 @@ class BMS{
     /* Verifies the given Parameter is within limits or not */
     void Verify_Parameter(float parameter,BMS_Parameters name_en,BMS_Lang Language_en)
     {
-      float min = BMS_Parameter_MaxMin_st[name].Minimum_Value;
-      float max = BMS_Parameter_MaxMin_st[name].Maximum_Value;
+      float min = BMS_Parameter_MaxMin_st[name_en].Minimum_Value;
+      float max = BMS_Parameter_MaxMin_st[name_en].Maximum_Value;
       const char* Parameter_Name = BMS_Parameters_Names[Language_en][name_en];
       if(parameter < min)
       {
