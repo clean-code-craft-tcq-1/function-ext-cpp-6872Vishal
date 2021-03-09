@@ -60,6 +60,12 @@ int main() {
   assert(batteryIsOk(50, 85, 0, English) == false);
   cout<<"**************3rd Test Case***********************\n";
   assert(batteryIsOk(44.25, 77, 0.78, German) == true);
-    cout<<"**************4th Test Case***********************\n";
+  cout<<"**************4th Test Case***********************\n";
   assert(batteryIsOk(1.75, 21.4, 0.03, German) == true);
+  cout<<"**************5th Test Case***********************\n";
+  assert(batteryIsOk(44.25, 77, 0.78, English) == true);
+  cout<<"**************6th Test Case***********************\n";
+  assert(batteryIsOk(1.75, 21.4, 0.03, English) == true);
+  cout<<"**************7st Test Case***********************\n";
+  assert(batteryIsOk(25, 70, 0.7, English) == true);
 }
