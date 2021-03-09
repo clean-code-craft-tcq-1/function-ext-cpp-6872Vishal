@@ -23,11 +23,11 @@ void BMS :: Verify_Parameter_Tolerance(float parameter,float max,float min,const
   }
 }
 /* Verifies the given Parameter is within limits or not */
-void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en,BMS_Lang Language_en)
+void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en)
 {
   float min = BMS_Parameter_MaxMin_st[name_en].Minimum_Value;
   float max = BMS_Parameter_MaxMin_st[name_en].Maximum_Value;
-  const char* Parameter_Name = BMS_Parameters_Names[Language_en][name_en];
+  const char* Parameter_Name = BMS_Parameters_Names[BMS_Language_type_en][name_en];
   if(parameter < min)
   {
     cout <<"Low "<<Parameter_Name<<" Breach! \n";
@@ -46,10 +46,10 @@ void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en,BMS_Lang Lan
 /* Returns the Battery state : OK or Not_OK */
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   class BMS class_obj;
-  enum BMS_Lang BMS_Language_type_en = English;
-  class_obj.Verify_Parameter(temperature,Temperature,BMS_Language_type_en);
-  class_obj.Verify_Parameter(soc,Sate_of_Charge,BMS_Language_type_en);
-  class_obj.Verify_Parameter(chargeRate,Charge_Rate,BMS_Language_type_en);
+  class_obj.BMS_Language_type_en = English;
+  class_obj.Verify_Parameter(temperature,Temperature);
+  class_obj.Verify_Parameter(soc,Sate_of_Charge);
+  class_obj.Verify_Parameter(chargeRate,Charge_Rate);
   return class_obj.Send_BMS_Result();
 }
 
