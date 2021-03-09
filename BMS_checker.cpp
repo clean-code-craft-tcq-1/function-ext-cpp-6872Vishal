@@ -59,5 +59,5 @@ int main() {
   cout<<"**************2nd Test Case***********************\n";
   assert(batteryIsOk(50, 85, 0, English) == false);
   cout<<"**************3rd Test Case***********************\n";
-  assert(batteryIsOk(41, 77, 0.7, German) == true);
+  assert(batteryIsOk(44.25, 77, 0.78, German) == true);
 }
