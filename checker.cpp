@@ -5,7 +5,6 @@ using namespace std;
 /* BMS : Battery Management System */
 enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate};
 enum BMS_Lang {English,German};
-//const char* BMS_Parameters_Name[] = { "Temperature" ,"SOC" , "ChargeRate" };
 
 const char* BMS_Parameters_Names[][3]={ {"Temperature" ,"SOC" , "ChargeRate"},
                                        {"Temperatur" , "Ladezustand" , "Ladestrom"} 
