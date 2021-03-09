@@ -44,9 +44,9 @@ void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en)
   }
 }      
 /* Returns the Battery state : OK or Not_OK */
-bool batteryIsOk(float temperature, float soc, float chargeRate) {
+bool batteryIsOk(float temperature, float soc, float chargeRate,BMS_Language tmplang_en) {
   class BMS class_obj;
-  class_obj.BMS_Market_Language = English;
+  class_obj.BMS_Market_Language = tmplang_en;
   class_obj.Verify_Parameter(temperature,Temperature);
   class_obj.Verify_Parameter(soc,Sate_of_Charge);
   class_obj.Verify_Parameter(chargeRate,Charge_Rate);
@@ -55,9 +55,9 @@ bool batteryIsOk(float temperature, float soc, float chargeRate) {
 
 int main() {
   cout<<"**************1st Test Case***********************\n";
-  assert(batteryIsOk(25, 70, 0.7) == true);
+  assert(batteryIsOk(25, 70, 0.7, German) == true);
   cout<<"**************2nd Test Case***********************\n";
-  assert(batteryIsOk(50, 85, 0) == false);
+  assert(batteryIsOk(50, 85, 0, English) == false);
   cout<<"**************3rd Test Case***********************\n";
-  assert(batteryIsOk(41, 77, 0.7) == true);
+  assert(batteryIsOk(41, 77, 0.7, German) == true);
 }
