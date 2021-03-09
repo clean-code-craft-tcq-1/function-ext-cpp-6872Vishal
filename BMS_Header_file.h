@@ -23,7 +23,7 @@ class BMS{
   // Variable to verify BMS OK or Not_OK //
     bool BMS_OK;
   public:
-    enum BMS_Languages BMS_Market_Language;
+    enum BMS_Languages BMS_Market_Language_en;
     BMS()
     { BMS_OK = true; }
   
