@@ -54,7 +54,10 @@ bool batteryIsOk(float temperature, float soc, float chargeRate) {
 }
 
 int main() {
+  cout<<"1st Test Case\n";
   assert(batteryIsOk(25, 70, 0.7) == true);
+  cout<<"2nd Test Case\n";
   assert(batteryIsOk(50, 85, 0) == false);
+  cout<<"3rd Test Case\n";
   assert(batteryIsOk(41, 77, 0.7) == true);
 }
