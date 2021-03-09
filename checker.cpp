@@ -41,7 +41,7 @@ class BMS{
     {
       return ((value_tmp * 5)/100);
     }
-    void Verify_Parameter_Tolerance(float parameter,BMS_Parameters name,BMS_Lang Language)
+    void Verify_Parameter_Tolerance(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
     {
       if(parameter < min+Return_5Percentage_of_Value(min))
       {
@@ -59,10 +59,10 @@ class BMS{
       }
     }
     /* Verifies the given Parameter is within limits or not */
-    void Verify_Parameter(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
+    void Verify_Parameter(float parameter,BMS_Parameters name,BMS_Lang Language)
     {
-      min = BMS_Parameter_MaxMin_st[name].Minimum_Value;
-      max = BMS_Parameter_MaxMin_st[name].Maximum_Value;
+      float min = BMS_Parameter_MaxMin_st[name].Minimum_Value;
+      float max = BMS_Parameter_MaxMin_st[name].Maximum_Value;
       if(parameter < min)
       {
         cout <<"Low "<<BMS_Lang_Names[Language][name]<<" Breach! \n";
