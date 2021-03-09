@@ -7,7 +7,7 @@ using namespace std;
 /* Verifies the given Parameter is within Tolerance of 5% or not */
 void BMS :: Verify_Parameter_Tolerance(float parameter,float max,float min,const char* Parameter_Name)
 {
-  if(parameter < min+Return_5Percentage_of_Value(min))
+  if(parameter < min+Return_5Percentage_of_Value(max))
   {
     cout <<"Low "<<Parameter_Name<<" Warning! \n";
 
