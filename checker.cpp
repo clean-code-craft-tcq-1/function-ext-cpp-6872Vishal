@@ -21,11 +21,12 @@ struct BMS_Parameters_MAX_and_MIN_Values
   enum BMS_Parameters Parameter_Name;
   float Minimum_Value;
   float Maximum_Value;
+  const char* BMS_English_Name[];
 };
 
-struct BMS_Parameters_MAX_and_MIN_Values BMS_Parameter_MaxMin_st[3]={ {Temperature, (float)0 , (float)45}, 
-                                                                      {Sate_of_Charge, (float)20 , (float)80}, 
-                                                                      {Charge_Rate, (float)0.0 , (float)0.8} 
+struct BMS_Parameters_MAX_and_MIN_Values BMS_Parameter_MaxMin_st[3]={ {Temperature, (float)0 , (float)45 , "Temperature"}, 
+                                                                      {Sate_of_Charge, (float)20 , (float)80 , "SOC"}, 
+                                                                      {Charge_Rate, (float)0.0 , (float)0.8 , "ChargeRate"} 
                                                                     };
 
 class BMS{
@@ -40,7 +41,7 @@ class BMS{
     {
       return ((value_tmp * 5)/100);
     }
-    void Verify_Parameter_Tolerance(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
+    void Verify_Parameter_Tolerance(float parameter,BMS_Parameters name,BMS_Lang Language)
     {
       if(parameter < min+Return_5Percentage_of_Value(min))
       {
@@ -86,9 +87,9 @@ class BMS{
 /* Returns the Battery state : OK or Not_OK */
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   class BMS class_obj;
-  class_obj.Verify_Parameter(temperature,Temperature_Max,Temperature_Min,Temperature,English);
-  class_obj.Verify_Parameter(soc,SOC_Max,SOC_Min,Sate_of_Charge,English);
-  class_obj.Verify_Parameter(chargeRate,ChargeRate_Max,ChargeRate_Min,Charge_Rate,English);
+  class_obj.Verify_Parameter(temperature,Temperature,English);
+  class_obj.Verify_Parameter(soc,Sate_of_Charge,English);
+  class_obj.Verify_Parameter(chargeRate,Charge_Rate,English);
   return class_obj.Send_BMS_Result();
 }
 
