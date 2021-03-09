@@ -43,7 +43,7 @@ class BMS{
       }
       else
       {
-        cout<<" "<<BMS_Lang_Names[Language][name]<<" is Normal";
+        cout<<" "<<BMS_Lang_Names[Language][name]<<" is Normal \n";
       }
     }
     /* Verifies the given Parameter is within limits or not */
