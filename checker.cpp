@@ -60,6 +60,8 @@ class BMS{
     /* Verifies the given Parameter is within limits or not */
     void Verify_Parameter(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
     {
+      min = BMS_Parameter_MaxMin_st[name].Minimum_Value;
+      max = BMS_Parameter_MaxMin_st[name].Maximum_Value;
       if(parameter < min)
       {
         cout <<"Low "<<BMS_Lang_Names[Language][name]<<" Breach! \n";
