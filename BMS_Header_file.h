@@ -1,9 +1,9 @@
-enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate};
-enum BMS_Lang {English,German};
+enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate,Max_NoOf_BMS_Parameters};
+enum BMS_Languages {English,German};
 
-const char* BMS_Parameters_Names[][3]={ {"Temperature" ,"SOC" , "ChargeRate"},
-                                       {"Temperatur" , "Ladezustand" , "Ladestrom"} 
-                                      };
+const char* BMS_Parameters_Names[][Max_NoOf_BMS_Parameters]={ {"Temperature" ,    "SOC"      , "ChargeRate"},
+                                                              {"Temperatur"  , "Ladezustand" ,  "Ladestrom"} 
+                                                            }; 
 
 struct BMS_Parameters_MAX_and_MIN_Values
 {
@@ -23,7 +23,7 @@ class BMS{
   // Variable to verify BMS OK or Not_OK //
     bool BMS_OK;
   public:
-    enum BMS_Lang BMS_Market_Language;
+    enum BMS_Languages BMS_Market_Language;
     BMS()
     { BMS_OK = true; }
   
