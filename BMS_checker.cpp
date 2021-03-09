@@ -27,7 +27,7 @@ void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en)
 {
   float min = BMS_Parameter_MaxMin_st[name_en].Minimum_Value;
   float max = BMS_Parameter_MaxMin_st[name_en].Maximum_Value;
-  const char* Parameter_Name = BMS_Parameters_Names[BMS_Market_Language][name_en];
+  const char* Parameter_Name = BMS_Parameters_Names[BMS_Market_Language_en][name_en];
   if(parameter < min)
   {
     cout <<"Low "<<Parameter_Name<<" Breach! \n";
@@ -46,7 +46,7 @@ void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en)
 /* Returns the Battery state : OK or Not_OK */
 bool batteryIsOk(float temperature, float soc, float chargeRate,BMS_Languages tmplang_en) {
   class BMS class_obj;
-  class_obj.BMS_Market_Language = tmplang_en;
+  class_obj.BMS_Market_Language_en = tmplang_en;
   class_obj.Verify_Parameter(temperature,Temperature);
   class_obj.Verify_Parameter(soc,Sate_of_Charge);
   class_obj.Verify_Parameter(chargeRate,Charge_Rate);
