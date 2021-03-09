@@ -16,7 +16,14 @@ const char* BMS_Parameters_Name[] = { "Temperature" ,"SOC" , "ChargeRate" };
 const char* BMS_Lang_Names[][3]={ {"Temperature" ,"SOC" , "ChargeRate"},{"Temperatur" , "Ladezustand" , "Ladestrom"} };
 // enum BMS_Parameters_Min_Value {Temperature_Min = 0,  SOC_Min = 20, ChargeRate_Min = 0.0};
 // enum BMS_Parameters_Max_Value {Temperature_Max = 45, SOC_Max = 80, ChargeRate_Max = 0.8};
+struct BMS_Parameters_MAX_and_MIN_Values
+{
+  enum BMS_Parameters Parameter_Name;
+  float Minimum_Value;
+  float Maximum_Value;
+};
 
+struct BMS_Parameters_MAX_and_MIN_Values BMS_Parameter_MaxMin_st[3]={ {Temperature; 0 ; 45}, {Sate_of_Charge; 20 ; 80}, {Charge_Rate; 0.0 ; 0.8} };
 class BMS{
   private:
   // Variable to verify BMS OK or Not_OK //
