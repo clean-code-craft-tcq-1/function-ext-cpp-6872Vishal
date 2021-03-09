@@ -10,6 +10,7 @@ using namespace std;
 #define ChargeRate_Max  0.8
 /* BMS : Battery Management System */
 enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate};
+enum BMS_Lang {English,German};
 const char* BMS_Parameters_Name[] = { "Temperature" ,"SOC" , "ChargeRate" };
 
 const char* BMS_Lang_Names[][3]={ {"Temperature" ,"SOC" , "ChargeRate"},{"Temperatur" , "Ladezustand" , "Ladestrom"} };
@@ -24,16 +25,16 @@ class BMS{
     BMS()
     { BMS_OK = true; }
     /* Verifies the given Parameter is within limits or not */
-    void Verify_Parameter(float parameter,float max,float min,BMS_Parameters name)
+    void Verify_Parameter(float parameter,float max,float min,BMS_Parameters name,BMS_Lang Language)
     {
       if(parameter < min)
       {
-        cout <<BMS_Parameters_Name[name]<<" is below the Minimum Thershold! \n";
+        cout <<BMS_Lang_Names[Language][name]<<" is below the Minimum Thershold! \n";
         BMS_OK = false;
       }
       else if(parameter > max)
       {
-        cout <<BMS_Parameters_Name[name]<<" is above the Maximum Thershold! \n";
+        cout <<BMS_Lang_Names[Language][name]<<" is above the Maximum Thershold! \n";
         BMS_OK = false;
       }
       else
@@ -50,9 +51,9 @@ class BMS{
 /* Returns the Battery state : OK or Not_OK */
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   class BMS class_obj;
-  class_obj.Verify_Parameter(temperature,Temperature_Max,Temperature_Min,Temperature);
-  class_obj.Verify_Parameter(soc,SOC_Max,SOC_Min,Sate_of_Charge);
-  class_obj.Verify_Parameter(chargeRate,ChargeRate_Max,ChargeRate_Min,Charge_Rate);
+  class_obj.Verify_Parameter(temperature,Temperature_Max,Temperature_Min,Temperature,English);
+  class_obj.Verify_Parameter(soc,SOC_Max,SOC_Min,Sate_of_Charge,English);
+  class_obj.Verify_Parameter(chargeRate,ChargeRate_Max,ChargeRate_Min,Charge_Rate,English);
   return class_obj.Send_BMS_Result();
 }
 
