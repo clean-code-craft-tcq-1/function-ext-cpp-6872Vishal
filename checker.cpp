@@ -46,9 +46,10 @@ void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en,BMS_Lang Lan
 /* Returns the Battery state : OK or Not_OK */
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   class BMS class_obj;
-  class_obj.Verify_Parameter(temperature,Temperature,English);
-  class_obj.Verify_Parameter(soc,Sate_of_Charge,English);
-  class_obj.Verify_Parameter(chargeRate,Charge_Rate,English);
+  enum BMS_Lang BMS_Language_type_en = English;
+  class_obj.Verify_Parameter(temperature,Temperature,BMS_Language_type_en);
+  class_obj.Verify_Parameter(soc,Sate_of_Charge,BMS_Language_type_en);
+  class_obj.Verify_Parameter(chargeRate,Charge_Rate,BMS_Language_type_en);
   return class_obj.Send_BMS_Result();
 }
 
