@@ -68,4 +68,6 @@ int main() {
   assert(batteryIsOk(1.75, 21.4, 0.03, English) == true);
   cout<<"**************7st Test Case***********************\n";
   assert(batteryIsOk(25, 70, 0.7, English) == true);
+  cout<<"**************8th Test Case***********************\n";
+  assert(batteryIsOk(25, 70, 0.7, English) == true);
 }
