@@ -38,7 +38,7 @@ class BMS{
   
     bool Send_BMS_Result()
     {
-      return BMS_OK;
+      return BMS_Status_bo;
     }
   
 };
