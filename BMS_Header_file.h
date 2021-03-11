@@ -42,7 +42,7 @@ class BMS{
     }
     float Fahrenheit_to_Celsius(float temp_fahernheit)
     {
-      return ((temp_fahernheit - 32)* 5/9)
+      return ((temp_fahernheit - 32)* 5/9);
     }
   
 };
