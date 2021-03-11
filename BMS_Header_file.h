@@ -21,11 +21,11 @@ struct BMS_Parameters_MAX_and_MIN_Values BMS_Parameter_MaxMin_st[3]={ {Temperatu
 class BMS{
   private:
   // Variable to verify BMS OK or Not_OK //
-    bool BMS_OK;
+    bool BMS_Status_bo;
   public:
     enum BMS_Languages BMS_Market_Language_en;
     BMS()
-    { BMS_OK = true; }
+    { BMS_Status_bo = true; }
   
     float Return_5Percentage_of_Value(float value_tmp)
     {
