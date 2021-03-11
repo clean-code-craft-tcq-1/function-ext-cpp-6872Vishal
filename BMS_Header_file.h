@@ -40,9 +40,9 @@ class BMS{
     {
       return BMS_Status_bo;
     }
-    float Celsius_to_Fahrenheit(float temp_celsius)
+    float Fahrenheit_to_Celsius(float temp_fahernheit)
     {
-      return ((temp_celsius * 9/5) + 32)
+      return ((temp_fahernheit - 32)* 5/9)
     }
   
 };
