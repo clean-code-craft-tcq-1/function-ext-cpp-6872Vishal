@@ -1,5 +1,5 @@
 enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate,Max_NoOf_BMS_Parameters};
-enum BMS_Languages {English,German};
+enum BMS_Languages {English,German,English_US};
 
 const char* BMS_Parameters_Names[][Max_NoOf_BMS_Parameters]={ {"Temperature" ,    "SOC"      , "ChargeRate"},
                                                               {"Temperatur"  , "Ladezustand" ,  "Ladestrom"} 
@@ -39,6 +39,10 @@ class BMS{
     bool Send_BMS_Result()
     {
       return BMS_Status_bo;
+    }
+    float Celsius_to_Fahrenheit(float temp_celsius)
+    {
+      return ((temp_celsius * 9/5) + 32)
     }
   
 };
