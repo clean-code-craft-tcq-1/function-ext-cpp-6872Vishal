@@ -1,7 +1,7 @@
 enum BMS_Parameters {Temperature,Sate_of_Charge,Charge_Rate,Max_NoOf_BMS_Parameters};
 enum BMS_Languages {English,German,English_US};
 
-const char* BMS_Parameters_Names[][Max_NoOf_BMS_Parameters*5]={ {"Temperature" ,    "SOC"      , "ChargeRate"},
+const char* BMS_Parameters_Names[][Max_NoOf_BMS_Parameters]={ {"Temperature" ,    "SOC"      , "ChargeRate"},
                                                               {"Temperatur"  , "Ladezustand" ,  "Ladestrom"} 
                                                             }; 
 
