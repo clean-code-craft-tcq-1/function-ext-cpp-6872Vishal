@@ -27,7 +27,7 @@ class BMS{
     BMS()
     { BMS_Status_bo = true; }
   
-    float Return_5Percentage_of_Value(float value_tmp)
+    float 5Percent_of_Value(float value_tmp)
     {
       return ((value_tmp * 5)/100);
     }
