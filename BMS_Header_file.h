@@ -20,6 +20,8 @@ class BMS: public BMS_Car_System
   
     bool Send_BMS_Result()
     {
+      if(BMS_Status_bo != TRUE)
+      {  reporting(); }
       return BMS_Status_bo;
     }
     float Fahrenheit_to_Celsius(float temp_fahernheit)
