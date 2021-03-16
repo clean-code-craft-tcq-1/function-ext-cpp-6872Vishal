@@ -75,9 +75,9 @@ int main() {
   cout<<"**************8th Test Case************************\n";
   assert(batteryIsOk(25, 70, 0.7, English) == true);
   cout<<"***********Test Case to check Accumulator***********\n";
-  assert(batteryIsOk(50, 85, 0) == false);
-  assert(batteryIsOk(37.25, 70.23, 0.85) == false);
-  assert(batteryIsOk(25, 70, -0.5) == false);
-  assert(batteryIsOk(25, 10, 0.5) == false);
-  assert(batteryIsOk(-2, 20, 0.5) == false);
+  assert(batteryIsOk(50, 85, 0, English) == false);
+  assert(batteryIsOk(37.25, 70.23, 0.85, German) == false);
+  assert(batteryIsOk(25, 70, -0.5, English) == false);
+  assert(batteryIsOk(25, 10, 0.5, English) == false);
+  assert(batteryIsOk(-2, 20, 0.5, German) == false);
 }
