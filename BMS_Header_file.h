@@ -20,7 +20,7 @@ class BMS: public BMS_Car_System
   
     bool Send_BMS_Result()
     {
-      if(BMS_Status_bo != TRUE)
+      if(BMS_Status_bo != true)
       {  reporting(); }
       return BMS_Status_bo;
     }
