@@ -14,7 +14,7 @@ class BMS_Car_System:public base
 public:
 void accumulator(float parameter,BMS_Parameters name_en,std::string para_text,std::string breach_text)
 {
-  accumulator_str = accumulator_str + "\n" + para_text + breach_text;
+  accumulator_str = accumulator_str + para_text + breach_text + "\n";
 }
 void reporting()
 {
