@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <iostream>
+#include "accumulator.h"
 #include "BMS_Header_file.h"
 using namespace std;
 
@@ -30,12 +31,14 @@ void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en)
   const char* Parameter_Name = BMS_Parameters_Names[BMS_Market_Language_en][name_en];
   if(parameter < min)
   {
-    cout <<"Low "<<Parameter_Name<<" Breach! \n";
+    //cout <<"Low "<<Parameter_Name<<" Breach! \n";
+    accumulator(parameter,name_en,"Low "+Parameter_Name+" Breach");
     BMS_Status_bo = false;
   }
   else if(parameter > max)
   {
-    cout <<"High "<<Parameter_Name<<" Breach! \n";
+    //cout <<"High "<<Parameter_Name<<" Breach! \n";
+    accumulator(parameter,name_en,"High "+Parameter_Name+" Breach");
     BMS_Status_bo = false;
   }
   else
