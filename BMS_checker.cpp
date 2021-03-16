@@ -33,13 +33,13 @@ void BMS :: Verify_Parameter(float parameter,BMS_Parameters name_en)
   if(parameter < min)
   {
     //cout <<"Low "<<Parameter_Name<<" Breach! \n";
-    accumulator(parameter,name_en,Parameter_Name);
+    accumulator(parameter,name_en,Parameter_Name," Low Breach!");
     BMS_Status_bo = false;
   }
   else if(parameter > max)
   {
     //cout <<"High "<<Parameter_Name<<" Breach! \n";
-    accumulator(parameter,name_en,Parameter_Name);
+    accumulator(parameter,name_en,Parameter_Name," High Breach!");
     BMS_Status_bo = false;
   }
   else
