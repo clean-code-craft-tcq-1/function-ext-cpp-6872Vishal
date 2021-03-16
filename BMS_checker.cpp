@@ -76,8 +76,13 @@ int main() {
   assert(batteryIsOk(25, 70, 0.7, English) == true);
   cout<<"***********Test Case to check Accumulator***********\n";
   assert(batteryIsOk(50, 85, 0, English) == false);
+  cout<<"***************Next test case***********************\n";
   assert(batteryIsOk(37.25, 70.23, 0.85, German) == false);
+  cout<<"***************Next test case***********************\n";
   assert(batteryIsOk(25, 70, -0.5, English) == false);
+  cout<<"***************Next test case***********************\n";
   assert(batteryIsOk(25, 10, 0.5, English) == false);
+  cout<<"***************Next test case***********************\n";
   assert(batteryIsOk(-2, 20, 0.5, German) == false);
+  cout<<"***************Next test case***********************\n";
 }
