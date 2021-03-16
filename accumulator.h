@@ -12,7 +12,7 @@ virtual void reporting() = 0;
 class BMS_Car_System:public base
 {
 public:
-void accumulator(float parameter,BMS_Parameters name_en,string print_text)
+void accumulator(float parameter,BMS_Parameters name_en,std::string print_text)
 {
   accumulator_str = accumulator_str + "\n" + print_text;
 }
