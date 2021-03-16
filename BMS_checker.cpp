@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <iostream>
+#include "typedef.h"
 #include "accumulator.h"
 #include "BMS_Header_file.h"
 using namespace std;
