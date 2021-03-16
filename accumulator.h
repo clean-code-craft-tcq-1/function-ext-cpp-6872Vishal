@@ -1,7 +1,7 @@
 class base
 {
 protected:
-char* BMS_Parameters_Names[][Max_NoOf_BMS_Parameters] = {};
+string accumulator_str[Max_NoOf_BMS_Parameters];
 public:
 virtual void accumulator(const char* ) = 0;
 }
