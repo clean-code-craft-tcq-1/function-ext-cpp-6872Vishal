@@ -18,7 +18,8 @@ struct BMS_Parameters_MAX_and_MIN_Values BMS_Parameter_MaxMin_st[3]={ {Temperatu
                                                                     };
 
 
-class BMS{
+class BMS: public BMS_Car_System
+{
   private:
   // Variable to verify BMS OK or Not_OK //
     bool BMS_Status_bo;
