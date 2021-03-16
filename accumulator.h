@@ -1,16 +1,23 @@
+#include <string>
 class base
 {
 protected:
-string accumulator_str[Max_NoOf_BMS_Parameters];
+string accumulator_str;
+//float Parameters_reported_value[Max_NoOf_BMS_Parameters];
 public:
-virtual void accumulator(const char* ) = 0;
+virtual void accumulator(float ,BMS_Parameters ,string ) = 0;
+virtual void reporting() = 0;
 }
 
-class derieved1:public base
+class BMS_Car_System:public base
 {
 public:
-void accumulator(const char* text)
+void accumulator(float parameter,BMS_Parameters name_en,string print_text)
 {
-
+  accumulator_str = accumulator_str + "\n" + print_text;
+}
+void reporting()
+{
+cout<<"BMS Condition not Good due to: \n"<<accumulator_str;
 }
 }
