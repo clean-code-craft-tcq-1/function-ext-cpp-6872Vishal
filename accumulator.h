@@ -2,12 +2,12 @@
 class base
 {
 protected:
-string accumulator_str;
+std::string accumulator_str;
 //float Parameters_reported_value[Max_NoOf_BMS_Parameters];
 public:
-virtual void accumulator(float ,BMS_Parameters ,string ) = 0;
+virtual void accumulator(float ,BMS_Parameters ,std::string ) = 0;
 virtual void reporting() = 0;
-}
+};
 
 class BMS_Car_System:public base
 {
@@ -20,4 +20,4 @@ void reporting()
 {
 cout<<"BMS Condition not Good due to: \n"<<accumulator_str;
 }
-}
+};
