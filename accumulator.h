@@ -18,6 +18,6 @@ void accumulator(float parameter,BMS_Parameters name_en,std::string print_text)
 }
 void reporting()
 {
-cout<<"BMS Condition not Good due to: \n"<<accumulator_str;
+std::cout<<"BMS Condition not Good due to: \n"<<accumulator_str;
 }
 };
